@@ -1,12 +1,8 @@
-
 let canvas = document.getElementById("gameScreen");
 let ctx = canvas.getContext("2d");
 const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
-
-
 ctx.clearRect(0,0,GAME_WIDTH,GAME_HEIGHT);
-
 
 const level1 = 
 [
@@ -37,7 +33,6 @@ const level1 =
 	[8, 3, 1, 1, 1, 1, 1, 1, 1, 8, 1, 1, 1, 1, 1, 1, 1, 3, 8],
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
-
 const level2 =
 [
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -67,17 +62,16 @@ const level2 =
 	[8, 3, 1, 1, 1, 1, 1, 1, 1, 8, 1, 1, 1, 1, 1, 1, 1, 3, 8],
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
-
 const level3 =
 [
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
+
 function draw(e)
 {
 	return e;
 }
-
 draw(ctx)
 {
 	ctx.clearRect(0,0,GAME_WIDTH,GAME_HEIGHT);
@@ -126,7 +120,6 @@ function createBorders(level, borderFill)
 {
 	this.level = level;
 	this.borderFill = borderFill;
-	console.log(this.borderFill);
 	
 	level.forEach((row, rowIndex) => 
 	{
@@ -236,17 +229,11 @@ function createGame(level, rgb)
 	this.level = level;
 	this.rgb = rgb;
 	for(i=0; i<this.level.length; i++)
-{
-	for(j=0; j<this.level[i].length; j++)
 	{
-		
-		
-		createBorders(this.level, this.rgb);
-	}
-	
-}
-
-
-		
+		for(j=0; j<this.level[i].length; j++)
+		{	
+			createBorders(this.level, this.rgb);
+		}	
+	}		
 }
 

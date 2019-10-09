@@ -19,11 +19,11 @@ const level1 =
 	[8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 8],
 	[8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 8],
 	//Ghost and Pacman Portion
-	[8, 1, 1, 1, 1, 1, 0, 0, 2, 2, 0, 0, 1, 1, 1, 1, 1, 1, 8],
+	[8, 1, 0, 0, 1, 1, 0, 0, 2, 2, 0, 0, 1, 1, 1, 0, 0, 1, 8],
 	[8, 1, 1, 1, 1, 1, 8, 2, 2, 2, 2, 8, 2, 1, 1, 1, 1, 1, 8],
-	[8, 1, 1, 1, 1, 1, 8, 5, 6, 7, .7, 8, 1, 1, 1, 1, 1, 1, 8],
+	[8, 1, 0, 0, 1, 1, 8, 5, 6, 7, .7, 8, 1, 1, 1, 0, 0, 1, 8],
 	[8, 1, 1, 1, 1, 1, 8, 2, 2, 2, 2, 8, 2, 1, 1, 1, 1, 1, 8],
-	[8, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 8],
+	[8, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 8],
 	[8, 1, 1, 1, 1, 1, 1, 2, .8, 2, 1, 1, 1, 1, 1, 1, 1, 1, 8],
 	[8, 1, 1, 1, 1, 1, 1, 2, .8, 2, 1, 1, 1, 1, 1, 1, 1, 1, 8],
 	[8, 1, 1, 1, 1, 1, 1, .1, .1, .1, 1, 1, 1, 1, 1, 1, 1, 1, 8],
@@ -183,7 +183,7 @@ function createBorders(level, borderFill)
 				ctx.fillStyle = this.borderFill;
 				ctx.fill();
 			}
-			if(border === .8) //starter vertical  border
+			if(border === .8) //vertical  border
 			{
 				x = 40 * borderIndex;
 				y = 55 + 20 * rowIndex;
@@ -192,7 +192,7 @@ function createBorders(level, borderFill)
 				ctx.fillStyle = this.borderFill;
 				ctx.fill();
 			}
-			if(border === .1) //starter horizontal bar
+			if(border === .1) //horizontal border
 			{
 				x = 38.7 * borderIndex;
 				y = 55 + 20 * rowIndex;
@@ -202,7 +202,7 @@ function createBorders(level, borderFill)
 				
 				ctx.fill();
 			}
-			if(border === .5) //inner horizontal bars left
+			if(border === .5) //inner horizontal bars
 			{
 				x = 30 * borderIndex;
 				y = 55 + 20 * rowIndex;
@@ -213,7 +213,7 @@ function createBorders(level, borderFill)
 				ctx.fill();
 				
 			}	
-			if(border === .6) //inner horizontal bars right
+			if(border === .6) //inner horizontal bars
 			{
 				x = 30 * borderIndex;
 				y = 55 + 20 * rowIndex;
@@ -309,7 +309,7 @@ function createBorders(level, borderFill)
 				createGhost(ctx, x-38, y-25, "orange", "orange", "black");
 				
 			}
-			if(border === .2) //lives
+			if(border === .2)
 			{
 				x = 47 * borderIndex;
 				y = 57 + 20 * rowIndex;

@@ -5,7 +5,6 @@ const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
 ctx.clearRect(0,0,GAME_WIDTH,GAME_HEIGHT);
 
-
 const level1 = 
 [
 	//Top Portion
@@ -111,7 +110,7 @@ const level2 =
 
 function draw(e)
 {
-	console.log(e);
+	
 	return e;
 }
 
@@ -335,6 +334,7 @@ function createBorders(level, borderFill)
 {
 	this.level = level;
 	this.rgb = rgb;
+	console.log(this.level);
 	for(i=0; i<this.level.length; i++)
 	{
 		for(j=0; j<this.level[i].length; j++)

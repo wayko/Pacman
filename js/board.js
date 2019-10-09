@@ -1,12 +1,5 @@
 
-let canvas = document.getElementById("gameScreen");
-let ctx = canvas.getContext("2d");
-const GAME_WIDTH = 800;
-const GAME_HEIGHT = 600;
-ctx.clearRect(0,0,GAME_WIDTH,GAME_HEIGHT);
-
-
-const level1 = 
+export const level1 = 
 [
 	//Top Portion
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -40,7 +33,7 @@ const level1 =
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	[2, 2, 2, .2, .2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 ];
-const level2 =
+export const level2 =
 [
 	//Top Portion
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -74,7 +67,7 @@ const level2 =
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	[2, 2, 2, .2, .2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 ];
- const level3 =
+export const level3 =
 [
 	//Top Portion
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -109,15 +102,15 @@ const level2 =
 	[2, 2, 2, .2, .2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 ];
 
-function draw(e)
+export function draw(e)
 {
-	console.log(e);
+	
 	return e;
 }
 
 
 
- function createGhost(ctx, x, y, fill, stroke, stroke2)
+export function createGhost(ctx, x, y, fill, stroke, stroke2)
 {
 	this.x = x;
 	this.y = y;
@@ -154,7 +147,7 @@ function draw(e)
 	ctx.fill();	
 }
 
-function createBorders(level, borderFill)
+export function createBorders(level, borderFill)
 {
 	this.level = level;
 	this.borderFill = borderFill;
@@ -331,15 +324,13 @@ function createBorders(level, borderFill)
 
 }
 
- function createGame(level, rgb)
+export function createGame(level, rgb)
 {
-	this.level = level;
-	this.rgb = rgb;
-	for(i=0; i<this.level.length; i++)
+	for(var i=0; i<level.length; i++)
 	{
-		for(j=0; j<this.level[i].length; j++)
+		for(var j=0; j<level[i].length; j++)
 		{	
-			createBorders(this.level, this.rgb);
+			createBorders(level, rgb);
 		}	
 	}		
 }
